@@ -1,0 +1,116 @@
+
+
+//list bucket
+GET http://192.168.1.194:8566
+Accept: */*
+User-Agent: S3 httpclient
+Connection: Keep-Alive
+
+
+
+###
+
+
+//put bucket
+PUT http://localhost:8566/mybucket555
+Accept: */*
+User-Agent: S3 httpclient
+Connection: Keep-Alive
+x-oss-acl: private
+
+<?xml version="1.0" encoding="UTF-8"?>
+<CreateBucketConfiguration>
+    <LocationConstraint>mtosswz</LocationConstraint>
+    <StorageClass>STANDARD</StorageClass>
+</CreateBucketConfiguration>
+
+###
+
+//delete bucket
+DELETE  http://localhost:8566/mybucket222
+Accept: */*
+User-Agent: S3 httpclient
+Connection: Keep-Alive
+x-oss-acl: private
+
+
+###
+
+
+
+//get bucket info
+GET http://localhost:8566/mybucket444?bucketinfo
+Accept: */*
+User-Agent: S3 httpclient
+Connection: Keep-Alive
+x-oss-acl: private
+
+
+###
+
+//GET bucket location
+GET http://localhost:8566/mybucket111?location
+Accept: */*
+User-Agent: S3 httpclient
+Connection: Keep-Alive
+x-oss-acl: private
+
+
+###
+
+
+
+
+//================================== bucket policy =======================
+//GET bucket policy
+GET http://192.168.1.194:8566/lyc?policy
+Accept: */*
+User-Agent: S3 httpclient
+Connection: Keep-Alive
+x-oss-acl: private
+
+
+###
+
+
+//PUT bucket policy
+PUT  http://192.168.1.194:8566/lyc?policy
+Accept: */*
+User-Agent: S3 httpclient
+Connection: Keep-Alive
+x-oss-acl: private
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": [
+                    "*"
+                ]
+            },
+            "Action": [
+                "s3:GetBucketLocation",
+                "s3:PutObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::*"
+            ]
+        }
+    ]
+}
+
+###
+
+
+
+//DELETE bucket policy
+DELETE   http://localhost:8566/mybucket111?policy
+Accept: */*
+User-Agent: S3 httpclient
+Connection: Keep-Alive
+x-oss-acl: private
+
+###
+

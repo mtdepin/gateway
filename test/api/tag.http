@@ -1,0 +1,105 @@
+
+
+//put  object tags
+PUT http://localhost:8566/lyc/a/b/config.json?tagging&versionId=555d697ac960a9135d32456b5aa8a513
+Accept: */*
+User-Agent: S3 httpclient
+Authorization: AWS LBLEUZMKOO1ZWYC58G27:LZS7jx0e677y5iNrVuquyuW4t0M=
+X-Amz-Date: Mon, 29 Nov 2021 15:42:02 +0800
+Connection: Keep-Alive
+
+<Tagging>
+  <TagSet>
+    <Tag>
+      <Key>地点</Key>
+      <Value>环球中心</Value>
+    </Tag>
+    <Tag>
+      <Key>年份</Key>
+      <Value>2021</Value>
+    </Tag>
+    <Tag>
+      <Key>age</Key>
+      <Value>18</Value>
+    </Tag>
+  </TagSet>
+</Tagging>  
+
+###
+
+
+
+//get  object tags
+GET http://localhost:8566/lyc/a/b/config.json?tagging
+Accept: */*
+User-Agent: S3 httpclient
+Authorization: AWS LBLEUZMKOO1ZWYC58G27:fSnYWjWWclyn94vn6hRtjLtS2as=
+X-Amz-Date: Mon, 29 Nov 2021 15:42:02 +0800
+Connection: Keep-Alive
+
+
+###
+
+
+
+//delete  object tags
+DELETE http://localhost:8566/lyc/a/b/config.json?tagging
+Accept: */*
+User-Agent: S3 httpclient
+Authorization: AWS MOYDZBIUVFNHTRLPYJNF:JywHJeZaTKTx6biF6GmDcHO2/l0=
+X-Amz-Date: Mon, 22 Nov 2021 14:30:57 +0800
+Connection: Keep-Alive
+
+
+###
+
+
+# ==================== bucket tags actions =====================================================
+
+
+//put  bucket tags
+PUT http://localhost:8566/lyc?tagging
+Accept: */*
+User-Agent: S3 httpclient
+Authorization: AWS LBLEUZMKOO1ZWYC58G27:WWhCH2MWi/o30t3ifN5vzvPv/mc=
+X-Amz-Date: Mon, 29 Nov 2021 15:39:48 +0800
+Connection: Keep-Alive
+
+<Tagging>
+  <TagSet>
+    <Tag>
+      <Key>年份</Key>
+      <Value>2021</Value>
+    </Tag>
+    <Tag>
+      <Key>类型</Key>
+      <Value>照片</Value>
+    </Tag>
+  </TagSet>
+</Tagging>  
+
+###
+
+
+//get  bucket tags
+GET http://192.168.1.135:8566/lyc?tagging
+Accept: */*
+User-Agent: S3 httpclient
+Authorization: AWS LBLEUZMKOO1ZWYC58G27:febrwRCuPd4Ljnq2Ve+SEi32tKk=
+X-Amz-Date: Mon, 29 Nov 2021 15:39:48 +0800
+Connection: Keep-Alive
+
+
+###
+
+
+//delete  bucket tags
+DELETE http://localhost:8566/lyc?tagging
+Accept: */*
+User-Agent: S3 httpclient
+Authorization: AWS LBLEUZMKOO1ZWYC58G27:akuC+/zD/8R+r1LalncEH0UJ6CA=
+X-Amz-Date: Mon, 29 Nov 2021 15:39:48 +0800
+Connection: Keep-Alive
+
+
+###

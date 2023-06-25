@@ -1,0 +1,26 @@
+#配置
+nameserver-address: http://localhost:8522
+profile: true
+mq:
+  server: 192.168.2.194:9876
+
+iam:
+  url: http://localhost:10001
+#  url: http://192.168.2.190:10001
+
+redis:
+  redis_addr: 192.168.2.194:6379
+#  password: redis123456
+  password: c629c053cf698550927d1df38273ced5
+  db_number: 0
+  pool_size: 300
+jaeger:
+  jaeger_agent: 192.168.2.194:6831
+elasticsearch:
+  endpoint: http://192.168.2.194:9200
+  username: elastic
+  password: 123456
+  enable: false
+
+# 状态探测
+detection: true

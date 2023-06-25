@@ -1,0 +1,62 @@
+
+
+
+//put  object acl
+PUT http://localhost:8566/lyc/a/b/config.json?acl
+Accept: */*
+User-Agent: S3 httpclient
+Authorization: AWS LBLEUZMKOO1ZWYC58G27:8kBvR3v3xMZopIZCO4Wy5MdidYc=
+X-Amz-Date: Mon, 29 Nov 2021 16:34:13 +0800
+Connection: Keep-Alive
+x-amz-acl: public-read
+
+
+###
+
+
+//get  object acl
+
+GET http://localhost:8566/lyc/a/b/config.json?acl
+Accept: */*
+User-Agent: S3 httpclient
+Authorization: AWS LBLEUZMKOO1ZWYC58G27:IddOIKjQXPpwnRKjNM/TJL6A8oc=
+X-Amz-Date: Mon, 29 Nov 2021 16:36:16 +0800
+Connection: Keep-Alive
+x-amz-acl: public-read
+
+
+###
+
+
+
+
+// =============== bucker acl ============================================
+
+//put  bucket acl
+PUT http://localhost:8566/mybucket111?acl
+Accept: */*
+User-Agent: S3 httpclient
+Authorization: AWS LBLEUZMKOO1ZWYC58G27:8kBvR3v3xMZopIZCO4Wy5MdidYc=
+X-Amz-Date: Mon, 29 Nov 2021 16:34:13 +0800
+Connection: Keep-Alive
+x-amz-acl: private
+
+
+###
+
+
+//get  bucket acl
+
+GET http://localhost:8566/mybucket111?acl
+Accept: */*
+User-Agent: S3 httpclient
+Authorization: AWS LBLEUZMKOO1ZWYC58G27:IddOIKjQXPpwnRKjNM/TJL6A8oc=
+X-Amz-Date: Mon, 29 Nov 2021 16:36:16 +0800
+Connection: Keep-Alive
+x-amz-acl: public-read
+
+
+###
+
+
+

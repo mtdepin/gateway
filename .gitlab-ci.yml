@@ -1,0 +1,69 @@
+stages:
+  - buildMinio
+  - deploy
+
+build dev:
+  stage: buildMinio
+  retry: 1 # 重试一次
+  tags:
+    - runner193
+  only:
+    - develop
+  script:
+    - go mod tidy
+    - make  build
+    - docker build -t harbor.mty.wang/mtoss/minio:latest .
+    - docker push harbor.mty.wang/mtoss/minio:latest
+
+build testing:
+  stage: buildMinio
+  retry: 1 # 重试一次
+  tags:
+    - runner194
+  only:
+    - release
+  script:
+    - go mod tidy
+    - make  build
+    - docker build -t harbor.mty.wang/mtoss/minio:latest .
+    - docker push harbor.mty.wang/mtoss/minio:latest
+
+
+
+
+deploy dev:
+  stage: deploy
+  retry: 1 # 重试一次
+  tags:
+    - runner193
+  only:
+    - develop  # 只对dev分支起作用
+  script:
+    - docker-compose down && docker-compose up -d
+    - python3 ./cicd/test_bucket_option.py
+
+
+deploy testing:
+  stage: deploy
+  retry: 1 # 重试一次
+  when: manual
+  tags:
+    - runner194
+  only:
+    - release  # 只对dev分支起作用
+  script:
+    - docker-compose down && docker-compose up -d
+
+deploy poc:
+  stage: deploy
+  retry: 1 # 重试一次
+  when: manual
+  tags:
+    - runner193
+  only:
+    - feature/yzq
+  script:
+    - go mod tidy
+    - make  build
+    - docker build -t harbor.mty.wang/mtoss/minio:latest .
+    - docker-compose down && docker-compose up -d

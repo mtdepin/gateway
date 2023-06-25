@@ -1,0 +1,75 @@
+
+
+
+
+
+//list objects  V1
+GET http://192.168.1.135:8566/lyc?max-keys=10
+Accept: */*
+User-Agent: S3 httpclient
+Authorization: AWS LBLEUZMKOO1ZWYC58G27:aWOThTt8UIEYiQs8cCJBNMHZzMU=
+X-Amz-Date: Mon, 29 Nov 2021 18:13:13 +0800
+Connection: Keep-Alive
+
+###
+
+
+//list objects   V2
+GET http://192.168.1.135:8566/lyc?list-type=2&max-keys=10&continuation-token=MTA=
+Accept: */*
+User-Agent: S3 httpclient
+Authorization: AWS LBLEUZMKOO1ZWYC58G27:aWOThTt8UIEYiQs8cCJBNMHZzMU=
+X-Amz-Date: Mon, 29 Nov 2021 18:13:13 +0800
+Connection: Keep-Alive
+
+###
+
+
+
+//PUT object
+PUT  http://localhost:8566/mybucket111/tag.http
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/x-gzip
+
+< ./tag.http
+
+###
+
+
+
+//List mybucket111  objects
+GET  http://localhost:8566/mybucket111
+Accept: */*
+Cache-Control: no-cache
+
+
+###
+
+
+//GET object  
+GET  http://localhost:8566/mybucket111/bucket-logging/mylogs-mybucket1112021-12-02-09-36-26-bXlidWNrZXQxMTE=
+Accept: */*
+Cache-Control: no-cache
+
+
+###
+
+
+//DELETE mybucket111  objects
+DELETE   http://localhost:8566/mybucket111/tag.http
+Accept: */*
+Cache-Control: no-cache
+
+
+###
+
+
+
+
+
+
+
+
+
+

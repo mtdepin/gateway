@@ -1,0 +1,44 @@
+
+
+
+//PUT  bucket logging
+PUT http://localhost:8566/mybucket111?logging
+Accept: */*
+User-Agent: S3 httpclient
+X-Amz-Date: Fri, 26 Nov 2021 10:53:49 +0800
+Connection: Keep-Alive
+
+<?xml version="1.0" encoding="UTF-8"?>
+<BucketLoggingStatus>
+    <LoggingEnabled>
+        <TargetBucket>mybucket111</TargetBucket>
+        <TargetPrefix>mylogs-</TargetPrefix>
+    </LoggingEnabled>
+</BucketLoggingStatus>
+
+###
+
+
+//get  bucket logging
+GET http://localhost:8566/mybucket111?logging
+Accept: */*
+User-Agent: S3 httpclient
+Authorization: AWS LBLEUZMKOO1ZWYC58G27:GId/kUXTqsmtxdlSGP/2VFI3ltc=
+X-Amz-Date: Fri, 26 Nov 2021 10:53:49 +0800
+Connection: Keep-Alive
+
+
+###
+
+
+
+//DELETE  bucket logging
+DELETE  http://localhost:8566/lyc?logging
+Accept: */*
+User-Agent: S3 httpclient
+Authorization: AWS LBLEUZMKOO1ZWYC58G27:CbTV6fOKF1A/sQNb5l04fQEqIyc=
+X-Amz-Date: Fri, 26 Nov 2021 10:53:49 +0800
+Connection: Keep-Alive
+
+
+###

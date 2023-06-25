@@ -1,0 +1,18 @@
+# yaml 配置
+version: '3'
+services:
+  minio:
+    image: "harbor.mty.wang/mtoss/minio:latest"
+    container_name: "minio"
+    ports:
+      - "9000:9000"
+      - "127.0.0.1:9001:9001"
+    volumes:
+      - "/data/minio/conf:/opt/mtoss/minio/conf"
+      - "/data/minio/logs:/opt/mtoss/minio/logs"
+      - "/data/minio/multi:/opt/mtoss/minio/multi"
+    restart: always
+networks:
+  default:
+    external:
+      name: mtoss

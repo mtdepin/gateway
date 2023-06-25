@@ -1,0 +1,56 @@
+
+
+
+
+
+//PUT  bucket lifecycle
+PUT http://192.168.1.135:8566/lyc?lifecycle
+Accept: */*
+User-Agent: S3 httpclient
+Authorization: AWS LBLEUZMKOO1ZWYC58G27:vI4TSrSaxPJBH0KPTsYldPRRYBg=
+X-Amz-Date: Fri, 26 Nov 2021 13:54:24 +0800
+Connection: Keep-Alive
+
+<?xml version="1.0" encoding="UTF-8"?>
+<LifecycleConfiguration>
+  <Rule>
+    <ID>delete objects and parts after one day</ID>
+    <Prefix>a/b/</Prefix>
+    <Status>Enabled</Status>
+    <Expiration>
+      <Days>1</Days>
+    </Expiration>
+  </Rule>
+</LifecycleConfiguration>     
+
+###
+
+
+
+
+//get  bucket lifecycle
+GET http://localhost:8566/lyc?lifecycle
+Accept: */*
+User-Agent: S3 httpclient
+Authorization: AWS LBLEUZMKOO1ZWYC58G27:+tSVmBY0NWU4wXCcOwTLNGbqmy0=
+X-Amz-Date: Fri, 26 Nov 2021 13:54:24 +0800
+Connection: Keep-Alive
+
+
+###
+
+
+
+//DELETE  bucket lifecycle
+DELETE  http://localhost:8566/lyc?lifecycle
+Accept: */*
+User-Agent: S3 httpclient
+Authorization: AWS LBLEUZMKOO1ZWYC58G27:eEqTUBHdjEzQqHkGOPQs2AtAP6o=
+X-Amz-Date: Fri, 26 Nov 2021 13:54:24 +0800
+Connection: Keep-Alive
+
+
+###
+
+
+

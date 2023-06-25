@@ -1,0 +1,44 @@
+
+
+
+//GetBucketVersioning接口用于获取指定Bucket的版本控制状态。
+GET http://localhost:8566/mybucket111?versioning
+Accept: */*
+User-Agent: S3 httpclient
+Connection: Keep-Alive
+
+###
+
+
+
+//PutBucketVersioning设置指定存储空间（Bucket）的版本控制状态。
+PUT http://localhost:8566/mybucket111?versioning
+Accept: */*
+User-Agent: S3 httpclient
+Connection: Keep-Alive
+
+<?xml version="1.0" encoding="UTF-8"?>
+<VersioningConfiguration>
+    <Status>Enabled</Status>
+</VersioningConfiguration>
+
+###
+
+
+
+//GetBucketVersions(ListObjectVersions)接口用于列出Bucket中包括删除标记（Delete Marker）在内的所有Object的版本信息。
+//list objects versions
+GET http://localhost:8566/mybucket111?versions&key-marker=bucket.http
+Accept: */*
+User-Agent: S3 httpclient
+Connection: Keep-Alive
+
+
+
+###
+
+
+
+
+
+
